@@ -1,0 +1,502 @@
+[
+  {
+    "candidate_id": "CAND_0061265",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.779124
+  },
+  {
+    "candidate_id": "CAND_0079387",
+    "title": "AI Engineer",
+    "score": 0.775131
+  },
+  {
+    "candidate_id": "CAND_0018722",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.773482
+  },
+  {
+    "candidate_id": "CAND_0071974",
+    "title": "Senior AI Engineer",
+    "score": 0.773174
+  },
+  {
+    "candidate_id": "CAND_0002025",
+    "title": "Senior AI Engineer",
+    "score": 0.762659
+  },
+  {
+    "candidate_id": "CAND_0062247",
+    "title": "AI Engineer",
+    "score": 0.758914
+  },
+  {
+    "candidate_id": "CAND_0093912",
+    "title": "Senior Data Scientist",
+    "score": 0.756102
+  },
+  {
+    "candidate_id": "CAND_0018499",
+    "title": "Senior Machine Learning Engineer",
+    "score": 0.75405
+  },
+  {
+    "candidate_id": "CAND_0041669",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.750259
+  },
+  {
+    "candidate_id": "CAND_0028793",
+    "title": "Search Engineer",
+    "score": 0.74976
+  },
+  {
+    "candidate_id": "CAND_0065195",
+    "title": "Search Engineer",
+    "score": 0.747963
+  },
+  {
+    "candidate_id": "CAND_0074735",
+    "title": "Applied ML Engineer",
+    "score": 0.746273
+  },
+  {
+    "candidate_id": "CAND_0049538",
+    "title": "Applied ML Engineer",
+    "score": 0.746176
+  },
+  {
+    "candidate_id": "CAND_0099806",
+    "title": "AI Engineer",
+    "score": 0.739081
+  },
+  {
+    "candidate_id": "CAND_0094056",
+    "title": "NLP Engineer",
+    "score": 0.7388
+  },
+  {
+    "candidate_id": "CAND_0083307",
+    "title": "Search Engineer",
+    "score": 0.736624
+  },
+  {
+    "candidate_id": "CAND_0039383",
+    "title": "Applied ML Engineer",
+    "score": 0.736588
+  },
+  {
+    "candidate_id": "CAND_0047721",
+    "title": "Senior Data Scientist",
+    "score": 0.735131
+  },
+  {
+    "candidate_id": "CAND_0005649",
+    "title": "Senior Data Scientist",
+    "score": 0.73429
+  },
+  {
+    "candidate_id": "CAND_0042029",
+    "title": "Senior Data Scientist",
+    "score": 0.731951
+  },
+  {
+    "candidate_id": "CAND_0069905",
+    "title": "Applied ML Engineer",
+    "score": 0.731826
+  },
+  {
+    "candidate_id": "CAND_0014440",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.731643
+  },
+  {
+    "candidate_id": "CAND_0054123",
+    "title": "Applied ML Engineer",
+    "score": 0.730265
+  },
+  {
+    "candidate_id": "CAND_0020708",
+    "title": "Search Engineer",
+    "score": 0.729884
+  },
+  {
+    "candidate_id": "CAND_0064326",
+    "title": "Search Engineer",
+    "score": 0.728254
+  },
+  {
+    "candidate_id": "CAND_0017960",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.728202
+  },
+  {
+    "candidate_id": "CAND_0052328",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.724251
+  },
+  {
+    "candidate_id": "CAND_0044855",
+    "title": "Senior Data Scientist",
+    "score": 0.722806
+  },
+  {
+    "candidate_id": "CAND_0046064",
+    "title": "Senior NLP Engineer",
+    "score": 0.720755
+  },
+  {
+    "candidate_id": "CAND_0011687",
+    "title": "Senior NLP Engineer",
+    "score": 0.720099
+  },
+  {
+    "candidate_id": "CAND_0020877",
+    "title": "Applied ML Engineer",
+    "score": 0.719954
+  },
+  {
+    "candidate_id": "CAND_0098846",
+    "title": "AI Engineer",
+    "score": 0.71934
+  },
+  {
+    "candidate_id": "CAND_0053591",
+    "title": "AI Engineer",
+    "score": 0.717896
+  },
+  {
+    "candidate_id": "CAND_0030031",
+    "title": "AI Engineer",
+    "score": 0.717736
+  },
+  {
+    "candidate_id": "CAND_0051615",
+    "title": "Search Engineer",
+    "score": 0.717643
+  },
+  {
+    "candidate_id": "CAND_0066999",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.717108
+  },
+  {
+    "candidate_id": "CAND_0044883",
+    "title": "AI Engineer",
+    "score": 0.713452
+  },
+  {
+    "candidate_id": "CAND_0050876",
+    "title": "Applied ML Engineer",
+    "score": 0.713203
+  },
+  {
+    "candidate_id": "CAND_0007009",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.710741
+  },
+  {
+    "candidate_id": "CAND_0039754",
+    "title": "Senior Applied Scientist",
+    "score": 0.709109
+  },
+  {
+    "candidate_id": "CAND_0061339",
+    "title": "Search Engineer",
+    "score": 0.708379
+  },
+  {
+    "candidate_id": "CAND_0044222",
+    "title": "AI Engineer",
+    "score": 0.707708
+  },
+  {
+    "candidate_id": "CAND_0076163",
+    "title": "NLP Engineer",
+    "score": 0.706919
+  },
+  {
+    "candidate_id": "CAND_0006418",
+    "title": "Machine Learning Engineer",
+    "score": 0.706351
+  },
+  {
+    "candidate_id": "CAND_0018549",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.704968
+  },
+  {
+    "candidate_id": "CAND_0006567",
+    "title": "Senior AI Engineer",
+    "score": 0.703376
+  },
+  {
+    "candidate_id": "CAND_0078042",
+    "title": "Applied ML Engineer",
+    "score": 0.70304
+  },
+  {
+    "candidate_id": "CAND_0079064",
+    "title": "Senior Data Scientist",
+    "score": 0.701715
+  },
+  {
+    "candidate_id": "CAND_0070398",
+    "title": "Machine Learning Engineer",
+    "score": 0.701178
+  },
+  {
+    "candidate_id": "CAND_0088025",
+    "title": "Staff Machine Learning Engineer",
+    "score": 0.701094
+  },
+  {
+    "candidate_id": "CAND_0011162",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.700776
+  },
+  {
+    "candidate_id": "CAND_0035879",
+    "title": "AI Research Engineer",
+    "score": 0.699386
+  },
+  {
+    "candidate_id": "CAND_0043228",
+    "title": "Applied ML Engineer",
+    "score": 0.699285
+  },
+  {
+    "candidate_id": "CAND_0081686",
+    "title": "Search Engineer",
+    "score": 0.698512
+  },
+  {
+    "candidate_id": "CAND_0081852",
+    "title": "Senior Data Scientist",
+    "score": 0.698486
+  },
+  {
+    "candidate_id": "CAND_0055992",
+    "title": "AI Engineer",
+    "score": 0.698409
+  },
+  {
+    "candidate_id": "CAND_0075249",
+    "title": "Applied ML Engineer",
+    "score": 0.697708
+  },
+  {
+    "candidate_id": "CAND_0036437",
+    "title": "Search Engineer",
+    "score": 0.696006
+  },
+  {
+    "candidate_id": "CAND_0077337",
+    "title": "Staff Machine Learning Engineer",
+    "score": 0.695925
+  },
+  {
+    "candidate_id": "CAND_0042506",
+    "title": "Search Engineer",
+    "score": 0.693696
+  },
+  {
+    "candidate_id": "CAND_0041610",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.693593
+  },
+  {
+    "candidate_id": "CAND_0052682",
+    "title": "NLP Engineer",
+    "score": 0.692034
+  },
+  {
+    "candidate_id": "CAND_0082489",
+    "title": "ML Engineer",
+    "score": 0.690637
+  },
+  {
+    "candidate_id": "CAND_0091534",
+    "title": "AI Engineer",
+    "score": 0.690586
+  },
+  {
+    "candidate_id": "CAND_0000031",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.690143
+  },
+  {
+    "candidate_id": "CAND_0005538",
+    "title": "Senior AI Engineer",
+    "score": 0.689862
+  },
+  {
+    "candidate_id": "CAND_0036184",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.688779
+  },
+  {
+    "candidate_id": "CAND_0084819",
+    "title": "Search Engineer",
+    "score": 0.688092
+  },
+  {
+    "candidate_id": "CAND_0051630",
+    "title": "Machine Learning Engineer",
+    "score": 0.687359
+  },
+  {
+    "candidate_id": "CAND_0058146",
+    "title": "AI Research Engineer",
+    "score": 0.687295
+  },
+  {
+    "candidate_id": "CAND_0092706",
+    "title": "AI Research Engineer",
+    "score": 0.686596
+  },
+  {
+    "candidate_id": "CAND_0081846",
+    "title": "Lead AI Engineer",
+    "score": 0.686487
+  },
+  {
+    "candidate_id": "CAND_0030827",
+    "title": "Senior Data Scientist",
+    "score": 0.685694
+  },
+  {
+    "candidate_id": "CAND_0030953",
+    "title": "Search Engineer",
+    "score": 0.685478
+  },
+  {
+    "candidate_id": "CAND_0044890",
+    "title": "AI Research Engineer",
+    "score": 0.6849
+  },
+  {
+    "candidate_id": "CAND_0029367",
+    "title": "Senior Data Scientist",
+    "score": 0.684548
+  },
+  {
+    "candidate_id": "CAND_0074225",
+    "title": "Machine Learning Engineer",
+    "score": 0.683889
+  },
+  {
+    "candidate_id": "CAND_0075574",
+    "title": "Machine Learning Engineer",
+    "score": 0.683221
+  },
+  {
+    "candidate_id": "CAND_0061175",
+    "title": "AI Research Engineer",
+    "score": 0.682054
+  },
+  {
+    "candidate_id": "CAND_0008425",
+    "title": "Senior NLP Engineer",
+    "score": 0.681128
+  },
+  {
+    "candidate_id": "CAND_0096172",
+    "title": "NLP Engineer",
+    "score": 0.681001
+  },
+  {
+    "candidate_id": "CAND_0000981",
+    "title": "ML Engineer",
+    "score": 0.678947
+  },
+  {
+    "candidate_id": "CAND_0090155",
+    "title": "ML Engineer",
+    "score": 0.678625
+  },
+  {
+    "candidate_id": "CAND_0075439",
+    "title": "Machine Learning Engineer",
+    "score": 0.678449
+  },
+  {
+    "candidate_id": "CAND_0040887",
+    "title": "Machine Learning Engineer",
+    "score": 0.678302
+  },
+  {
+    "candidate_id": "CAND_0051292",
+    "title": "Applied ML Engineer",
+    "score": 0.678297
+  },
+  {
+    "candidate_id": "CAND_0057701",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.678231
+  },
+  {
+    "candidate_id": "CAND_0024620",
+    "title": "AI Engineer",
+    "score": 0.677877
+  },
+  {
+    "candidate_id": "CAND_0053695",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.677769
+  },
+  {
+    "candidate_id": "CAND_0008295",
+    "title": "AI Research Engineer",
+    "score": 0.676973
+  },
+  {
+    "candidate_id": "CAND_0026532",
+    "title": "Recommendation Systems Engineer",
+    "score": 0.676927
+  },
+  {
+    "candidate_id": "CAND_0096142",
+    "title": "Applied ML Engineer",
+    "score": 0.676663
+  },
+  {
+    "candidate_id": "CAND_0015528",
+    "title": "Applied ML Engineer",
+    "score": 0.676477
+  },
+  {
+    "candidate_id": "CAND_0007411",
+    "title": "Senior Machine Learning Engineer",
+    "score": 0.675237
+  },
+  {
+    "candidate_id": "CAND_0012957",
+    "title": "Search Engineer",
+    "score": 0.674725
+  },
+  {
+    "candidate_id": "CAND_0081053",
+    "title": "NLP Engineer",
+    "score": 0.674111
+  },
+  {
+    "candidate_id": "CAND_0086022",
+    "title": "Senior Applied Scientist",
+    "score": 0.673203
+  },
+  {
+    "candidate_id": "CAND_0030468",
+    "title": "Senior Applied Scientist",
+    "score": 0.673068
+  },
+  {
+    "candidate_id": "CAND_0010603",
+    "title": "ML Engineer",
+    "score": 0.672822
+  },
+  {
+    "candidate_id": "CAND_0046525",
+    "title": "Senior Machine Learning Engineer",
+    "score": 0.671492
+  }
+]
