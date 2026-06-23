@@ -2,1643 +2,278 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NEXUS AI Recruiter</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-       background:#020617;color:#f1f5f9;min-height:100vh}
-  ::-webkit-scrollbar{width:6px}
-  ::-webkit-scrollbar-track{background:#0f172a}
-  ::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-  .card{animation:fadeIn .4s ease forwards}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Recruiter System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script defer src="candidate_data.js"></script>
+<script defer src="script.js"></script>
+
 </head>
 <body>
 
-<!-- NAV -->
-<div style="background:#0a0f1e;border-bottom:1px solid #1e293b;padding:0 32px;
-     position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)">
-  <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;
-       justify-content:space-between;height:56px">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div style="width:32px;height:32px;background:linear-gradient(135deg,#0d9488,#0284c7);
-           border-radius:8px;display:flex;align-items:center;justify-content:center;
-           font-weight:900;font-size:14px">N</div>
-      <span style="font-weight:700;font-size:15px;letter-spacing:.02em">NEXUS AI Recruiter</span>
-      <span style="background:#1e293b;color:#64748b;font-size:10px;padding:2px 8px;
-           border-radius:10px;font-weight:600">INTELLIGENCE PLATFORM</span>
-    </div>
-    <div style="display:flex;gap:24px;font-size:12px;color:#475569">
-      <span>⚡ 0.01s processing</span>
-      <span>📊 10/10 shortlisted</span>
-      <span style="color:#0d9488">● Live</span>
-    </div>
-  </div>
-</div>
+<header class="navbar">
 
-<!-- HERO -->
-<div style="background:linear-gradient(135deg,#0a0f1e 0%,#0f172a 50%,#0a0f1e 100%);
-     border-bottom:1px solid #1e293b;padding:32px">
-  <div style="max-width:1400px;margin:0 auto">
-    <div style="font-size:11px;color:#0d9488;text-transform:uppercase;letter-spacing:.1em;
-         font-weight:600;margin-bottom:8px">Intelligence Report · June 12, 2026</div>
-    <h1 style="font-size:28px;font-weight:800;color:#f1f5f9;margin-bottom:4px">Senior ML Engineer — Foundation Models</h1>
-    <div style="font-size:14px;color:#475569">
-      Ml Engineer &nbsp;·&nbsp;
-      Principal Level &nbsp;·&nbsp;
-      Enterprise
+    <div class="logo">
+
+        <div class="logo-icon">
+            ⚡
+        </div>
+
+        <div>
+
+            <h2>AI Recruiter System</h2>
+
+            <span>
+                Semantic Candidate Intelligence Platform
+            </span>
+
+        </div>
+
     </div>
 
-    <!-- KPI Row -->
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:24px">
-      
-      <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px 20px">
-        <div style="font-size:24px;font-weight:800;color:#f1f5f9">10</div>
-        <div style="font-size:11px;color:#475569;margin-top:2px;text-transform:uppercase;letter-spacing:.05em">Candidates Analyzed</div>
-      </div>
-      <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px 20px">
-        <div style="font-size:24px;font-weight:800;color:#0d9488">10</div>
-        <div style="font-size:11px;color:#475569;margin-top:2px;text-transform:uppercase;letter-spacing:.05em">Shortlisted</div>
-      </div>
-      <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px 20px">
-        <div style="font-size:24px;font-weight:800;color:#0284c7">0</div>
-        <div style="font-size:11px;color:#475569;margin-top:2px;text-transform:uppercase;letter-spacing:.05em">Ready to Hire</div>
-      </div>
-      <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px 20px">
-        <div style="font-size:24px;font-weight:800;color:#94a3b8">48.4</div>
-        <div style="font-size:11px;color:#475569;margin-top:2px;text-transform:uppercase;letter-spacing:.05em">Avg Score</div>
-      </div>
-      <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px 20px">
-        <div style="font-size:24px;font-weight:800;color:#0284c7">74.7</div>
-        <div style="font-size:11px;color:#475569;margin-top:2px;text-transform:uppercase;letter-spacing:.05em">Top Score</div>
-      </div>
-    </div>
-  </div>
-</div>
+</header>
 
-<!-- MAIN -->
-<div style="max-width:1400px;margin:0 auto;padding:32px;display:grid;
-     grid-template-columns:1fr 280px;gap:24px">
+<section class="hero">
 
-  <!-- LEFT: CANDIDATES -->
-  <div>
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
-      <h2 style="font-size:16px;font-weight:700;color:#f1f5f9">Ranked Shortlist</h2>
-      <div style="font-size:12px;color:#475569">Sorted by composite intelligence score</div>
-    </div>
-    
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+    <div class="hero-glow"></div>
 
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">🥇</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#0284c7" stroke-width="7"
-            stroke-dasharray="154.8 52.5"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#0284c7">75</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Aria Chen</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">Senior ML Engineer @ OpenAI</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 San Francisco, CA &nbsp;·&nbsp; 💼 7 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#7c3aed;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">CONSIDER</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 2300</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#4ade80">2d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <h1>
+        AI Recruiter System
+    </h1>
 
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
+    <p>
+        Hybrid Retrieval • Semantic Search • Explainable Ranking
+    </p>
 
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">79</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:79%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">66</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:66%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">69</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:69%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">82</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:82%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">18</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:18%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">50</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:50%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
+    <div class="hero-badges">
 
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in python, machine learning, pytorch</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Career trajectory perfectly aligned with role archetype</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Proven in high-bar technical environments</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div>
-              
-            </div>
+        <span>100,000 Candidates</span>
+        <span>FAISS Retrieval</span>
+        <span>Explainable AI</span>
+        <span>Semantic Ranking</span>
 
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Model optimization & production deployment</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:98%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">98% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">🥈</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#d97706" stroke-width="7"
-            stroke-dasharray="109.3 98.1"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#d97706">53</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Fatima Al-Rashidi</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">ML Engineer @ Hugging Face</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Remote &nbsp;·&nbsp; 💼 4 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 8000</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">1</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#4ade80">1d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">57</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:57%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">33</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:33%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">52</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:52%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">76</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:76%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">3</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:3%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">48</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:48%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in python, machine learning, nlp</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Published researcher and recognized thought leader</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Open source leader</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: tensorflow (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: data pipeline (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: tensorflow</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: data pipeline</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:97%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">97% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">🥉</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#d97706" stroke-width="7"
-            stroke-dasharray="109.0 98.4"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#d97706">53</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Marcus Johnson</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">ML Engineer @ Cohere</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 New York, NY &nbsp;·&nbsp; 💼 4 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 800</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#4ade80">1d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">58</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:58%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">31</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:31%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">47</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:47%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">75</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:75%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">8</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:8%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">46</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:46%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in python, llm</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Published researcher and recognized thought leader</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Research impact</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: tensorflow (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Secondary gaps: kafka</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: tensorflow</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: distributed systems</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:96%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">96% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#4</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#d97706" stroke-width="7"
-            stroke-dasharray="103.7 103.7"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#d97706">50</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Robert Kim</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">VP of Engineering, AI @ Salesforce</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Palo Alto, CA &nbsp;·&nbsp; 💼 15 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 200</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">3</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#94a3b8">21d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">51</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:51%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">45</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:45%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">56</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:56%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">68</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:68%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">14</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:14%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">65</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:65%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in machine learning, distributed systems, kubernetes</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Proven in high-bar technical environments</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Published researcher and recognized thought leader</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: pytorch (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: data pipeline (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: transformers (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: pytorch</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: data pipeline</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:85%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">85% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#5</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#94a3b8" stroke-width="7"
-            stroke-dasharray="103.6 103.8"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#94a3b8">50</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">James O'Brien</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">Staff Software Engineer @ Netflix</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Austin, TX &nbsp;·&nbsp; 💼 6 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 1200</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#facc15">5d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">51</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:51%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">35</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:35%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">57</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:57%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">70</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:70%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">6</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:6%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">46</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:46%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in python, distributed systems, kubernetes</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Proven in high-bar technical environments</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Open source leader</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: tensorflow (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: pytorch (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: transformers (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: tensorflow</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: pytorch</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:96%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">96% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#6</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#94a3b8" stroke-width="7"
-            stroke-dasharray="100.8 106.6"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#94a3b8">49</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Priya Patel</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">Principal Data Engineer @ Amazon</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Seattle, WA &nbsp;·&nbsp; 💼 9 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 150</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">1</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#94a3b8">14d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">47</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:47%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">54</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:54%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">55</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:55%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">46</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:46%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">14</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:14%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">48</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:48%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in python, data pipeline, spark</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Proven in high-bar technical environments</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Fast career progression</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: pytorch (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: transformers (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: pytorch</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: distributed systems</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:70%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">70% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#7</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#94a3b8" stroke-width="7"
-            stroke-dasharray="91.0 116.4"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#94a3b8">44</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Dr. Wei Zhang</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">Research Scientist @ MIT CSAIL</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Boston, MA &nbsp;·&nbsp; 💼 8 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 450</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">12</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">1</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#94a3b8">30d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">43</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:43%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">31</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:31%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">55</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:55%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">64</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:64%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">5</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:5%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">56</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:56%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Expert-level proficiency in python, machine learning, pytorch</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Proven in high-bar technical environments</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Published researcher and recognized thought leader</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: tensorflow (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: data pipeline (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: tensorflow</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: data pipeline</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:82%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">82% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#8</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#94a3b8" stroke-width="7"
-            stroke-dasharray="85.9 121.4"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#94a3b8">41</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Zara Thompson</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">ML Engineer @ Scale AI</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 San Jose, CA &nbsp;·&nbsp; 💼 1.5 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#64748b;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PIPELINE</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 300</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">2</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#4ade80">Today</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">35</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:35%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">49</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:49%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">31</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:31%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">68</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:68%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">13</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:13%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">46</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:46%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Career trajectory perfectly aligned with role archetype</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#0d9488;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Significant open source contributions & community presence</span></div>
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: tensorflow (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: data pipeline (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: tensorflow</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: data pipeline</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:96%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">96% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#9</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#94a3b8" stroke-width="7"
-            stroke-dasharray="77.1 130.2"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#94a3b8">37</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">Alex Rivera</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">ML Engineer @ Startup A</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Denver, CO &nbsp;·&nbsp; 💼 5 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#dc2626;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PASS</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 20</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#facc15">3d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">33</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:33%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">17</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:17%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">40</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:40%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">90</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:90%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">3</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:3%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">44</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:44%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: tensorflow (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: data pipeline (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: tensorflow</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: data pipeline</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:52%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">52% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-             overflow:hidden;transition:transform .2s,box-shadow .2s;margin-bottom:16px"
-             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,.4)'"
-             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-
-          <!-- Header -->
-          <div style="padding:20px 24px 16px;border-bottom:1px solid #1e293b;
-               display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="font-size:24px">#10</div>
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0">
-                
-        <svg width="80" height="80" style="transform:rotate(-90deg)">
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#1e293b" stroke-width="7"/>
-          <circle cx="40.0" cy="40.0" r="33.0"
-            fill="none" stroke="#94a3b8" stroke-width="7"
-            stroke-dasharray="68.4 138.9"
-            stroke-linecap="round"/>
-        </svg>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-             font-size:15px;font-weight:700;color:#94a3b8">33</div>
-              </div>
-              <div>
-                <div style="font-size:18px;font-weight:700;color:#f1f5f9">David Park</div>
-                <div style="font-size:13px;color:#64748b;margin-top:2px">ML Engineer @ Mid-size Startup</div>
-                <div style="font-size:12px;color:#475569;margin-top:4px">📍 Chicago, IL &nbsp;·&nbsp; 💼 5 yrs exp</div>
-              </div>
-            </div>
-            <div style="text-align:right">
-              <div style="background:#dc2626;color:#ffffff;padding:6px 14px;
-                   border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.05em;
-                   display:inline-block">PASS</div>
-              <div style="margin-top:10px;display:flex;gap:12px;justify-content:flex-end">
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">⭐ 10</div>
-                  <div style="font-size:10px;color:#475569">GH Stars</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Papers</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#f1f5f9">—</div>
-                  <div style="font-size:10px;color:#475569">Refs</div>
-                </div>
-                <div style="text-align:center">
-                  <div style="font-size:14px;font-weight:700;color:#facc15">7d ago</div>
-                  <div style="font-size:10px;color:#475569">Active</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Body -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-
-            <!-- Scores -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:12px;font-weight:600">Score Breakdown</div>
-              
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Technical</span>
-                <span style="font-size:11px;font-weight:600;color:#0d9488">31</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0d9488;height:6px;width:31%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Semantic Fit</span>
-                <span style="font-size:11px;font-weight:600;color:#0284c7">19</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:19%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Experience</span>
-                <span style="font-size:11px;font-weight:600;color:#7c3aed">46</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#7c3aed;height:6px;width:46%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Behavioral</span>
-                <span style="font-size:11px;font-weight:600;color:#d97706">50</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#d97706;height:6px;width:50%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Culture</span>
-                <span style="font-size:11px;font-weight:600;color:#f43f5e">6</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#f43f5e;height:6px;width:6%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            <div style="margin-bottom:10px">
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px">
-                <span style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em">Growth</span>
-                <span style="font-size:11px;font-weight:600;color:#8b5cf6">48</span>
-              </div>
-              <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#8b5cf6;height:6px;width:48%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-            </div>
-            </div>
-
-            <!-- Strengths & Gaps -->
-            <div style="padding:16px 20px;border-right:1px solid #1e293b">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Strengths</div>
-              
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 10px;font-weight:600">Gaps & Risks</div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: pytorch (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: data pipeline (86% importance)</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:6px"><span style="color:#f43f5e;margin-top:1px;flex-shrink:0">!</span><span style="font-size:12px;color:#cbd5e1;line-height:1.4">Missing critical skill: distributed systems (86% importance)</span></div>
-            </div>
-
-            <!-- Interview & Signal -->
-            <div style="padding:16px 20px">
-              <div style="font-size:11px;color:#475569;text-transform:uppercase;
-                   letter-spacing:.08em;margin-bottom:10px;font-weight:600">Interview Focus</div>
-              <div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: pytorch</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ Technical deep-dive: data pipeline</div><div style="font-size:11px;color:#94a3b8;padding:5px 8px;background:#1e293b;border-radius:4px;margin-bottom:4px">→ System design: ML pipeline at scale</div>
-              
-              <div style="margin-top:14px;padding:10px;background:#1e293b;border-radius:8px">
-                <div style="font-size:10px;color:#475569;margin-bottom:4px">CONFIDENCE</div>
-                <div style="background:#1e293b;border-radius:4px;height:6px;width:100%;overflow:hidden">
-          <div style="background:#0284c7;height:6px;width:47%;border-radius:4px;
-               transition:width 1s ease"></div></div>
-                <div style="font-size:11px;color:#94a3b8;margin-top:4px">47% data completeness</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-  </div>
-
-  <!-- RIGHT: SIDEBAR -->
-  <div>
-
-    <!-- Job Requirements -->
-    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-         padding:20px;margin-bottom:16px">
-      <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:16px;
-           text-transform:uppercase;letter-spacing:.05em">Job Requirements</div>
-      
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">python</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">machine learning</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">tensorflow</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">pytorch</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">data pipeline</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">distributed systems</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">nlp</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-        <div style="width:85px;max-width:100px;background:#0d9488;
-             height:4px;border-radius:2px;flex-shrink:0"></div>
-        <span style="font-size:12px;color:#94a3b8">transformers</span>
-        <span style="font-size:11px;color:#475569;margin-left:auto">86%</span>
-      </div>
     </div>
 
-    <!-- Culture DNA -->
-    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-         padding:20px;margin-bottom:16px">
-      <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:12px;
-           text-transform:uppercase;letter-spacing:.05em">Culture DNA</div>
-      <span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Fast Paced</span><span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Impact Driven</span><span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Innovation Focused</span><span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Collaborative</span><span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Autonomous</span><span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Data Driven</span><span style="font-size:11px;background:#1e293b;color:#94a3b8;padding:4px 10px;border-radius:20px;margin:3px 3px 3px 0;display:inline-block">Growth Mindset</span>
+</section>
+
+<section class="stats">
+
+    <div class="card">
+
+        <h3>Candidates Evaluated</h3>
+        <h2>100,000</h2>
+
     </div>
 
-    <!-- Hidden Requirements -->
-    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;
-         padding:20px;margin-bottom:16px">
-      <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:12px;
-           text-transform:uppercase;letter-spacing:.05em">Hidden Requirements</div>
-      <div style="font-size:12px;color:#94a3b8;padding:6px 0;border-bottom:1px solid #1e293b">→ Production Experience</div><div style="font-size:12px;color:#94a3b8;padding:6px 0;border-bottom:1px solid #1e293b">→ Startup Adaptability</div><div style="font-size:12px;color:#94a3b8;padding:6px 0;border-bottom:1px solid #1e293b">→ Communication Skills</div><div style="font-size:12px;color:#94a3b8;padding:6px 0;border-bottom:1px solid #1e293b">→ System Design Ability</div><div style="font-size:12px;color:#94a3b8;padding:6px 0;border-bottom:1px solid #1e293b">→ Research Aptitude</div>
+    <div class="card">
+
+        <h3>Final Ranked</h3>
+        <h2>100</h2>
+
     </div>
 
-    <!-- Score Legend -->
-    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;padding:20px">
-      <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:12px;
-           text-transform:uppercase;letter-spacing:.05em">Scoring Model</div>
-      
-      <div style="display:flex;justify-content:space-between;align-items:center;
-           padding:5px 0;border-bottom:1px solid #1e293b">
-        <span style="font-size:11px;color:#94a3b8">Technical Match</span>
-        <span style="font-size:11px;font-weight:600;color:#0d9488">30%</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;
-           padding:5px 0;border-bottom:1px solid #1e293b">
-        <span style="font-size:11px;color:#94a3b8">Semantic Fit</span>
-        <span style="font-size:11px;font-weight:600;color:#0284c7">20%</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;
-           padding:5px 0;border-bottom:1px solid #1e293b">
-        <span style="font-size:11px;color:#94a3b8">Experience Quality</span>
-        <span style="font-size:11px;font-weight:600;color:#7c3aed">20%</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;
-           padding:5px 0;border-bottom:1px solid #1e293b">
-        <span style="font-size:11px;color:#94a3b8">Behavioral Signals</span>
-        <span style="font-size:11px;font-weight:600;color:#d97706">15%</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;
-           padding:5px 0;border-bottom:1px solid #1e293b">
-        <span style="font-size:11px;color:#94a3b8">Culture Fit</span>
-        <span style="font-size:11px;font-weight:600;color:#f43f5e">10%</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;
-           padding:5px 0;border-bottom:1px solid #1e293b">
-        <span style="font-size:11px;color:#94a3b8">Growth Trajectory</span>
-        <span style="font-size:11px;font-weight:600;color:#8b5cf6">5%</span>
-      </div>
+    <div class="card">
+
+        <h3>Embedding Model</h3>
+        <h2>MiniLM</h2>
+
     </div>
 
-  </div>
-</div>
+    <div class="card">
 
-<div style="text-align:center;padding:24px;color:#1e293b;font-size:11px;border-top:1px solid #0f172a">
-  NEXUS AI Recruiter · Semantic Intelligence Platform · 2026
-</div>
+        <h3>Vector Search</h3>
+        <h2>FAISS</h2>
+
+    </div>
+
+</section>
+
+<section class="impact">
+
+    <h2>System Impact</h2>
+
+    <div class="impact-grid">
+
+        <div class="impact-card">
+
+            <h3>100,000</h3>
+            <p>Candidates Processed</p>
+
+        </div>
+
+        <div class="impact-card">
+
+            <h3>5,000</h3>
+            <p>Retrieved via FAISS</p>
+
+        </div>
+
+        <div class="impact-card">
+
+            <h3>100</h3>
+            <p>Final Ranked Candidates</p>
+
+        </div>
+
+        <div class="impact-card">
+
+            <h3>0.779</h3>
+            <p>Top Candidate Score</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="insights">
+
+    <h2>AI Hiring Insights</h2>
+
+    <div class="insights-grid">
+
+        <div class="insight-card">
+
+            <h3>Top Skill</h3>
+
+            <p>
+                Recommendation Systems
+            </p>
+
+        </div>
+
+        <div class="insight-card">
+
+            <h3>Most Common Expertise</h3>
+
+            <p>
+                Embeddings & Retrieval
+            </p>
+
+        </div>
+
+        <div class="insight-card">
+
+            <h3>Average Experience</h3>
+
+            <p>
+                6.7 Years
+            </p>
+
+        </div>
+
+        <div class="insight-card">
+
+            <h3>Best Candidate</h3>
+
+            <p>
+                CAND_0061265
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="architecture">
+
+    <h2>Ranking Pipeline</h2>
+
+    <div class="pipeline">
+
+        <div>Job Description</div>
+
+        <div>Sentence Transformer</div>
+
+        <div>Vector Embeddings</div>
+
+        <div>FAISS Retrieval</div>
+
+        <div>Top 5000 Candidates</div>
+
+        <div>Feature Engineering</div>
+
+        <div>Behavior Analysis</div>
+
+        <div>Hybrid Ranking</div>
+
+        <div>Top 100 Candidates</div>
+
+        <div>Explainable AI</div>
+
+    </div>
+
+</section>
+
+<section class="leaderboard">
+
+    <div class="left-panel">
+
+        <h2>Candidate Leaderboard</h2>
+
+        <input
+            id="searchBox"
+            placeholder="Search Candidate ID"
+        >
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+                    <th>ID</th>
+                    <th>Score</th>
+                    <th>Decision</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="candidateTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="right-panel">
+
+        <h2>Candidate Intelligence Panel</h2>
+
+        <p class="panel-subtitle">
+
+            Explainable AI ranking and recommendation insights
+
+        </p>
+
+        <div id="candidateDetails">
+
+            Select candidate
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    AI Recruiter System
+    •
+    100,000 Candidate Evaluation
+    •
+    FAISS Retrieval
+    •
+    Explainable AI
+
+</footer>
 
 </body>
 </html>

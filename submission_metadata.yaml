@@ -1,0 +1,125 @@
+# ============================================================
+
+# REDROB HACKATHON - SUBMISSION METADATA
+
+# ============================================================
+
+team_name: "AI Recruiter System"
+
+primary_contact:
+name: "Justin George"
+email: "[jg1844670@gmail.com](mailto:jg1844670@gmail.com)"
+
+team_members:
+
+* name: "Justin George"
+  email: "[jg1844670@gmail.com](mailto:jg1844670@gmail.com)"
+  role: "Lead Developer"
+
+github_repo: "https://github.com/JustinGeorge9778/redrob-ai-recruiter"
+
+sandbox_link: "https://huggingface.co/spaces/justingeorge/redrob-ranker"
+
+# ============================================================
+
+# AI TOOLS DECLARATION
+
+# ============================================================
+
+ai_tools_used:
+
+* "ChatGPT"
+* "GitHub Copilot"
+
+ai_usage_summary: |
+ChatGPT was used for architecture discussions, debugging assistance,
+code reviews, documentation improvement, and implementation guidance.
+GitHub Copilot was used for code completion and boilerplate generation.
+No candidate ranking decisions were delegated to an LLM.
+
+# ============================================================
+
+# COMPUTE ENVIRONMENT
+
+# ============================================================
+
+compute:
+platform: "Windows 11"
+cpu_cores: 12
+ram_gb: 16
+python_version: "3.12"
+os: "Windows 11"
+uses_gpu_for_inference: false
+has_network_during_ranking: false
+pre_computation_required: true
+pre_computation_time_minutes: 15
+
+# ============================================================
+
+# METHODOLOGY SUMMARY
+
+# ============================================================
+
+methodology_summary: |
+Multi-stage AI recruitment system consisting of:
+
+1. Job Description Understanding
+
+   * Skill extraction
+   * Requirement analysis
+   * Domain signal detection
+   * Culture and hiring signal extraction
+
+2. Semantic Candidate Retrieval
+
+   * SentenceTransformer embeddings
+   * FAISS vector search
+   * Top candidate retrieval from large candidate pool
+
+3. Multi-Dimensional Candidate Scoring
+
+   * Skill Match (25%)
+   * Title / Headline Match (18%)
+   * Experience Quality (15%)
+   * Career Trajectory (12%)
+   * Behavioral Signals (15%)
+   * Education (5%)
+   * Location / Culture Fit (5%)
+   * Honeypot Detection (5%)
+
+4. Cross-Encoder Re-ranking
+
+   * Deep semantic relevance scoring
+   * Candidate re-ordering
+
+5. Ensemble Ranking
+
+   * Initial Score (30%)
+   * Cross-Encoder Score (35%)
+   * Behavioral Score (10%)
+   * Skill Match Score (15%)
+   * Experience Quality Score (10%)
+
+6. Explainable AI
+
+   * Human-readable reasoning generation
+   * Recruiter-friendly recommendations
+
+7. Quality & Risk Controls
+
+   * Honeypot detection
+   * Keyword stuffing checks
+   * Experience consistency validation
+
+# ============================================================
+
+# DECLARATIONS
+
+# ============================================================
+
+declarations:
+read_submission_spec: true
+code_is_original_work: true
+no_collusion: true
+honeypot_check_done: true
+reproduction_tested: true
