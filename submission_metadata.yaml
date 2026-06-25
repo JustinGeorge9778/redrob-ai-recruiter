@@ -18,7 +18,9 @@ team_members:
 
 github_repo: "https://github.com/JustinGeorge9778/redrob-ai-recruiter"
 
-sandbox_link: "https://huggingface.co/spaces/justingeorge/redrob-ranker"
+reproduce_command: "python run_ultimate.py --jd job_description.txt"
+
+sandbox_link: https://colab.research.google.com/drive/1D99XoMDy77XA82odWBogbOqMc6IPpfBh?usp=sharing
 
 # ============================================================
 

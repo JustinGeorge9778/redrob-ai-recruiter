@@ -318,6 +318,29 @@ Contains:
 * Explainable Reasoning
 
 ---
+# Pre-computation
+
+The ranking system uses pre-computed candidate embeddings and a FAISS index to enable efficient semantic retrieval.
+
+These artifacts are generated once before ranking and are reused during inference.
+
+To regenerate the artifacts from the original challenge dataset:
+
+```bash
+python src/embed_candidates.py
+python src/build_faiss_index.py
+```
+
+The online ranking step does **not** rebuild embeddings or indexes.
+
+To generate the final submission:
+
+```bash
+python run_ultimate.py --jd job_description.txt
+```
+
+The ranking pipeline loads the pre-computed artifacts and produces the final ranked CSV within the competition's CPU-only execution constraints.
+
 
 # Results
 
